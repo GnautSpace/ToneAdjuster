@@ -28,8 +28,8 @@ const ToneMatrix = ({ editorText, setEditorText,originalText ,onClose,showToast}
         try {
             console.log("fetching with tone", tone);
             const prompt = `Rewrite the following text in ${tonePrompts[tone]} tone: \n\n${editorText}`;
-
-            const response = await fetch("/api/tone", {
+            const apiUrl=import.meta.env.VITE_API_URL||"";
+            const response = await fetch(`${apiUrl}/api/tone`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ prompt }),
