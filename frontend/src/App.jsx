@@ -48,7 +48,7 @@ function App() {
       <div className="app-main">
         
         <div id="left-panel">
-          <h2>Tone Picker</h2>
+          <h2>Tone Adjuster</h2>
           <Editor editorText={editorText} setEditorText={handleSetText}/>
         </div>
         <div id="right-panel">
