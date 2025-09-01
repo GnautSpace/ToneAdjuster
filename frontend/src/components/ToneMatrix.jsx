@@ -5,7 +5,7 @@ const ToneMatrix = ({ editorText, setEditorText,originalText ,onClose,showToast}
     const [selected, setSelected] = useState(null);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
-    const apiUrl=import.meta.env.VITE_API_URL||"";
+    //const apiUrl=import.meta.env.VITE_API_URL||"";
     
     const tonePrompts = {
         "professional-concise": "professional and concise",
@@ -30,7 +30,7 @@ const ToneMatrix = ({ editorText, setEditorText,originalText ,onClose,showToast}
             console.log("fetching with tone", tone);
             const prompt = `Rewrite the following text in ${tonePrompts[tone]} tone: \n\n${editorText}`;
             
-            const response = await fetch(`${apiUrl}/api/tone`, {
+            const response = await fetch(`https://toneadjuster.onrender.com/api/tone`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ prompt }),
