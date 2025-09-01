@@ -1,0 +1,104 @@
+.tone-picker-container {
+    width: 340px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 24px 20px 20px 20px;
+    position: relative;
+    animation: fadeIn 0.2s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+
+.tone-picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+.tone-picker-header h3{
+    color: #000;
+}
+
+#close-tone-picker {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: #000000;
+    transition: color 0.2s;
+}
+#close-tone-picker:hover {
+    color: #007aff;
+}
+
+.tone-matrix {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-top: 8px;
+    position: relative;
+}
+
+.tone-matrix button {
+    padding: 14px 0;
+    font-size: 1rem;
+    border: 1.5px solid #e0e0e0;
+    background: #f7f9fa;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background 0.2s, border 0.2s, color 0.2s;
+    font-weight: 500;
+}
+
+.tone-matrix button.selected {
+    background: #007aff;
+    color: #fff;
+    border: 2px solid #005bb5;
+}
+
+.tone-matrix.loading {
+    pointer-events: none;
+    opacity: 0.5;
+    position: relative;
+}
+
+.tone-matrix .spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border: 4px solid #007aff;
+    border-top: 4px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    background: transparent;
+}
+
+@keyframes spin {
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.adjust-tone-toggle {
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    background: #007aff;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    transition: background 0.2s;
+}
+.adjust-tone-toggle:hover {
+    background: #005bb5;
+}
